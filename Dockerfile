@@ -1,6 +1,5 @@
-
-# Use a more recent Node.js version
-FROM node:16-alpine
+# Use the latest Node.js LTS version
+FROM node:latest
 
 # Create and set the working directory
 WORKDIR /app
@@ -11,12 +10,10 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
-
-
 # Copy the rest of the application code
 COPY . .
 
-# Run tests
+# Run tests (assuming your tests are set up correctly)
 RUN npm test
 
 # Expose the application port
@@ -24,4 +21,5 @@ EXPOSE 8000
 
 # Start the application
 CMD ["node", "app.js"]
+
 
