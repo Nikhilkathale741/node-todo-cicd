@@ -1,4 +1,7 @@
 
+# Use a more recent Node.js version
+FROM node:16-alpine
+
 # Create and set the working directory
 WORKDIR /app
 
@@ -19,3 +22,4 @@ EXPOSE 8000
 
 # Start the application
 CMD ["node", "app.js"]
+
